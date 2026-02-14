@@ -38,8 +38,8 @@ package.json
 - Implementing authentication and authorization
 - Database design with Sequelize and migrations
 - Building admin dashboards for real-world use cases
-- Professional Git/GitHub workflow
-- 
+- Professional Git/GitHub workflow (clean commits, .gitignore, repo hygiene)
+  
 ## ▶️ How to Run Locally
 
 1. Clone the repository  
