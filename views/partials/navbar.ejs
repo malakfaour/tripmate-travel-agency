@@ -1,0 +1,65 @@
+<!-- Navbar -->
+<header class="new-navbar">
+  <div class="logo">
+    <a href="/" class="home-link">TRIPMATE</a>
+  </div>
+
+  <nav>
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="/destinations">DESTINATIONS ▾</a>
+        <div class="dropdown">Explore amazing destinations</div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/categories">CATEGORIES</a>
+        <div class="dropdown">Adventure, Relaxation & more</div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/contact">CONTACT ▾</a>
+        <div class="dropdown">Talk to a travel advisor</div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/company">COMPANY ▾</a>
+        <div class="dropdown">About our story</div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="actions">
+    <a href="/book" class="btn-started">BOOK WITH TRIPMATE</a>
+
+    <!-- 🔍 Search Icon -->
+    <div class="search-toggle">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="auth-links" id="authLinks"></div>
+  </div><div class="search-box hidden">
+  <form action="/search" method="GET">
+
+    <!-- Choose category (REQUIRED) -->
+    <select name="category" required>
+      <option value="">Select Category</option>
+      <option value="Honeymoons">Honeymoons</option>
+      <option value="Family Adventures">Family Adventures</option>
+      <option value="Adventure Escapes">Adventure Escapes</option>
+      <option value="Cultural Journeys">Cultural Journeys</option>
+      <option value="Luxury Cruises">Luxury Cruises</option>
+      <option value="Solo Expeditions">Solo Expeditions</option>
+    </select>
+
+    <!-- Sort destination cards -->
+    <select name="sort">
+      <option value="alpha">Destination A–Z</option>
+      <option value="price_asc">Price: Low → High</option>
+      <option value="price_desc">Price: High → Low</option>
+    </select>
+
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+</header>

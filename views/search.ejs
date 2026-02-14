@@ -1,0 +1,80 @@
+<%- include('partials/header', { title }) %>
+<%- include('partials/navbar') %>
+
+<section class="categories-section">
+
+  <div class="categories-header">
+    <h2><%= category %> Trips</h2>
+    <p>Showing trips in <strong><%= category %></strong>, sorted as selected.</p>
+  </div>
+
+  <!-- FILTER BAR (category + sort) -->
+  <form class="search-controls" method="GET" style="margin-bottom: 30px; text-align:center;">
+
+    <!-- Keep category selected -->
+    <select name="category" style="padding:10px 14px; border-radius:8px; border:1px solid #ddd;" required>
+      <option value="">Select Category</option>
+      <option value="Honeymoons" <%= category==="Honeymoons" ? "selected" : "" %>>Honeymoons</option>
+      <option value="Family Adventures" <%= category==="Family Adventures" ? "selected" : "" %>>Family Adventures</option>
+      <option value="Adventure Escapes" <%= category==="Adventure Escapes" ? "selected" : "" %>>Adventure Escapes</option>
+      <option value="Cultural Journeys" <%= category==="Cultural Journeys" ? "selected" : "" %>>Cultural Journeys</option>
+      <option value="Luxury Cruises" <%= category==="Luxury Cruises" ? "selected" : "" %>>Luxury Cruises</option>
+      <option value="Solo Expeditions" <%= category==="Solo Expeditions" ? "selected" : "" %>>Solo Expeditions</option>
+    </select>
+
+    <!-- Sort -->
+    <select name="sort" style="padding:10px 14px; border-radius:8px; border:1px solid #ddd; margin-left:8px;">
+      <option value="alpha" <%= sort==="alpha" ? "selected" : "" %>>Destination A–Z</option>
+      <option value="price_asc" <%= sort==="price_asc" ? "selected" : "" %>>Price: Low → High</option>
+      <option value="price_desc" <%= sort==="price_desc" ? "selected" : "" %>>Price: High → Low</option>
+    </select>
+
+    <button type="submit" class="category-btn" style="margin-left:10px;">Apply</button>
+  </form>
+
+  <% if (trips.length === 0) { %>
+    <p style="text-align:center; color: var(--muted-text);">
+      No trips found in this category yet.
+    </p>
+  <% } else { %>
+    <div class="categories-grid">
+      <% trips.forEach(t => { %>
+        <article class="category-card">
+          <img src="<%= t.image %>" alt="<%= t.destination %>">
+          <div class="category-info">
+            <h3><%= t.destination %></h3>
+            <p><%= t.description %></p>
+            <p style="margin-bottom:10px; font-weight:600;">$<%= t.price %></p>
+            <a href="/book?destination=<%= encodeURIComponent(t.destination) %>" class="category-btn">
+              Book Now
+            </a>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  <% } %>
+
+  <!-- PAGINATION -->
+  <div class="pagination" style="margin-top: 40px; text-align:center;">
+
+    <% if (page > 1) { %>
+      <a href="?category=<%= category %>&sort=<%= sort %>&page=<%= page - 1 %>">Prev</a>
+    <% } %>
+
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <a href="?category=<%= category %>&sort=<%= sort %>&page=<%= i %>"
+         class="<%= i === page ? 'active' : '' %>">
+        <%= i %>
+      </a>
+    <% } %>
+
+    <% if (page < totalPages) { %>
+      <a href="?category=<%= category %>&sort=<%= sort %>&page=<%= page + 1 %>">Next</a>
+    <% } %>
+
+  </div>
+
+</section>
+
+<%- include('partials/footer') %>
+<script defer src="/js/script.js"></script>

@@ -1,0 +1,34 @@
+<%- include('partials/header', { title: 'TripMate | My Bookings' }) %> <%- include('partials/navbar') %>
+    <!-- Hero Section -->
+    <section class="my-bookings-hero fade-in">
+      <div class="container">
+        <h1>My Bookings</h1>
+        <p>Manage, edit, or cancel your trips.</p>
+      </div>
+    </section> <!-- Bookings Section -->
+    <section class="my-bookings-section fade-in">
+      <div class="container bookings-container"> <!-- Login notice -->
+        <div id="loginNotice" class="notice hidden">
+          <p>Please log in to view your bookings.</p> <a href="/login" class="btn brown">Go to Login</a>
+        </div> <!-- Empty message -->
+        <div id="bookingsEmpty" class="empty hidden">
+          <p>No bookings yet.</p> <a href="/book" class="btn brown">Book a Trip</a>
+        </div> <!-- Grid for booking cards -->
+        <div id="bookingsGrid" class="bookings-grid"></div>
+      </div>
+    </section> <!-- Edit Booking Modal -->
+    <div id="editModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-dialog">
+        <h3>Edit Booking</h3>
+        <form id="editBookingForm"> <input type="hidden" id="editId" />
+          <div class="form-row"> <label>Destination</label> <input id="editDestination" type="text" required /> </div>
+          <div class="form-row"> <label>Passengers</label> <input id="editPassengers" type="number" min="1" required />
+          </div>
+          <div class="form-row"> <label>Phone</label> <input id="editPhone" type="tel" required /> </div>
+          <div class="form-row"> <label>Message</label> <textarea id="editMessage" rows="3"></textarea> </div>
+          <div class="modal-actions"> <button type="button" id="closeEditModal" class="btn btn-outline">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Changes</button> </div>
+        </form>
+      </div>
+    </div> <!-- Footer --> <%- include('partials/footer') %> <!-- JS (after footer so it loads last) -->
+      <script defer src="/js/script.js"></script>

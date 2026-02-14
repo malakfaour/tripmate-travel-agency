@@ -1,0 +1,60 @@
+<%- include('partials/header', { title: 'TripMate | Destinations' }) %>
+<%- include('partials/navbar') %>
+
+<!-- Hero -->
+<section class="hero" style="height:70vh;">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/images/destination-hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-text">
+    <h1>Discover <em>World-Class</em> Destinations</h1>
+    <p>Exclusive journeys curated by TripMate travel experts.</p>
+  </div>
+</section>
+
+<!-- Trip Section -->
+<section class="trip-section fade-in">
+  <div class="trip-header">
+    <h2>Book your next trip</h2>
+    <p>Explore curated travel experiences.</p>
+    <div class="trip-arrows">
+      <button class="arrow-btn" id="prevBtn">&#8592;</button>
+      <button class="arrow-btn" id="nextBtn">&#8594;</button>
+    </div>
+  </div>
+
+  <div class="trip-cards" id="tripCards">
+
+    <% if (trips && trips.length > 0) { %>
+      <% trips.forEach(trip => { %>
+
+        <!-- ADD ID BASED ON DESTINATION NAME -->
+        <div class="trip-card" id="<%= trip.destination %>">
+          <img src="<%= trip.image || '/images/default.jpg' %>" alt="<%= trip.destination %>">
+          <h3><%= trip.destination %></h3>
+          <p><%= trip.description %></p>
+          <p class="trip-price"><strong>$<%= trip.price.toFixed(2) %></strong></p>
+
+          <a href="/book?destination=<%= encodeURIComponent(trip.destination) %>" class="learn-btn">
+            BOOK NOW
+          </a>
+        </div>
+
+      <% }) %>
+    <% } else { %>
+      <p>No trips available.</p>
+    <% } %>
+
+  </div>
+</section>
+
+<!-- Special Offers & rest of your page remains exactly the same -->
+
+<%- include('partials/footer') %>
+<style>
+  .hero-text h1,
+  .hero-text p {
+    color: #fff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4); /* optional, makes it clearer */
+  }
+</style>

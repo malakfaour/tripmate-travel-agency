@@ -1,0 +1,88 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<style>
+  .admin-page {
+    padding: 120px 40px 60px; /* push content below navbar */
+    background: #f7f4ef;      /* matches TripMate beige */
+    min-height: 100vh;
+  }
+
+  .admin-page h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.4rem;
+    color: #4b2e1e; /* dark coffee */
+    margin-bottom: 25px;
+  }
+
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .admin-table th {
+    background: #e8ded2;
+    padding: 14px;
+    font-weight: 700;
+    color: #4b2e1e;
+    text-align: left;
+  }
+
+  .admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+  }
+
+  .admin-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .admin-table tr:hover td {
+    background: #f4ece3;
+  }
+</style>
+
+<section class="admin-page">
+  <div class="container">
+    <h1>Booking Requests</h1>
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Destination</th>
+          <th>Category</th>
+          <th>Passengers</th>
+          <th>Phone</th>
+          <th>Message</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% bookings.forEach(b => { %>
+          <tr>
+            <td><%= b.id %></td>
+            <td><%= b.fullName %></td>
+            <td><%= b.email %></td>
+            <td><%= b.destination %></td>
+            <td><%= b.category %></td>
+            <td><%= b.passengers %></td>
+            <td><%= b.phone %></td>
+            <td><%= b.message %></td>
+            <td><%= b.createdAt.toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

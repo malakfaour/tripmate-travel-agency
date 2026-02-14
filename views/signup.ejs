@@ -1,0 +1,38 @@
+<%- include('partials/header', { title: 'TripMate | Sign Up' }) %>
+<body class="light-navbar"></body>
+<%- include('partials/navbar') %>
+
+<!-- Sign Up Section -->
+<section class="signup-section fade-in">
+  <div class="signup-container">
+    <h1>Create Your <span>TripMate Account</span></h1>
+    <p class="signup-lead">
+      Join our community of travelers and start booking exclusive trips with confidence.
+    </p>
+
+    <form id="signupForm" class="signup-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required minlength="6">
+
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" required minlength="6">
+
+      <button type="submit" class="signup-btn">Create Account</button>
+      
+      <p id="signupMessage" style="margin-top: 10px; font-weight: bold;"></p>
+    </form>
+
+    <p class="signup-footer">
+      Already have an account? <a href="/login">Log In</a>
+    </p>
+  </div>
+</section>
+
+<script src="/js/script.js"></script>
+<%- include('partials/footer') %>

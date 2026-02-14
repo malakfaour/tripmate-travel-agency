@@ -1,0 +1,61 @@
+<%- include('partials/header', { title }) %>
+<%- include('partials/navbar') %>
+
+<body class="light-navbar">
+
+<!-- Hero -->
+<section class="hero" style="height:70vh;">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/images/categories-hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-text">
+    <h1>Explore by <em>Category</em></h1>
+    <p>Whether you seek adventure, romance, or serenity — TripMate has it all.</p>
+  </div>
+</section>
+
+<!-- Categories Grid -->
+<section class="categories-section fade-in">
+  <div class="categories-header">
+    <h2>Find Your Perfect Type of Travel</h2>
+    <p>Every traveler is unique. Choose the category that fits your journey best.</p>
+  </div>
+
+  <div class="categories-grid">
+
+    <% if (categories && categories.length > 0) { %>
+      <% categories.forEach(cat => { %>
+        <div class="category-card" id="<%= cat.name %>">
+
+          <img src="<%= cat.image %>" alt="<%= cat.name %>">
+
+          <div class="category-info">
+            <h3><%= cat.name %></h3>
+            <p><%= cat.description %></p>
+
+            <!-- Redirect to view trips of this category -->
+            <a href="/categories/trips/<%= encodeURIComponent(cat.name) %>" class="category-btn">
+              View Trips
+            </a>
+          </div>
+
+        </div>
+      <% }) %>
+
+    <% } else { %>
+      <p>No categories found.</p>
+    <% } %>
+
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="category-cta fade-in">
+  <div class="cta-content">
+    <h2>Not sure which category suits you?</h2>
+    <p>Let our TripMate Advisors guide you.</p>
+    <a href="/book" class="cta-btn">Talk to an Advisor</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

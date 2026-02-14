@@ -1,0 +1,170 @@
+<%- include('partials/header', { title: 'TripMate - Unforgettable trips, crafted by experts' }) %>
+<%- include('partials/navbar') %>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/images/travelvideo.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-text">
+    <h1>
+      <span class="animate">Every journey tells a story</span><br />
+      <span class="animate delay"> let’s start yours.</span>
+    </h1>
+  </div>
+  <div class="left-text">
+    <p>Once-in-a-lifetime<br />experiences around<br />the world</p>
+    <div class="arrow">&#8595;</div>
+  </div>
+</section>
+
+<!-- Fora Feature -->
+<section class="fora-feature fade-in">
+  <div class="fora-inner">
+    <h1 class="fora-title">Next-level travel powered by tech and the human touch</h1>
+    <p class="fora-lead">
+      Our travel advisors have the tools, insights, and connections to build your dream vacation.
+      Get VIP recommendations and perks, a seamless booking experience, and maybe a cool new friend along the way.
+    </p>
+    <div class="fora-cta-wrap">
+      <a class="fora-cta" href="/book">BOOK WITH TRIPMATE</a>
+    </div>
+  </div>
+</section>
+
+<!-- Dream Section -->
+<section class="dream-section fade-in">
+  <div class="dream-container">
+    <div class="dream-title">
+      <h1>
+        You <span class="dream-word">dream it,</span><br />
+        we <em>craft it</em>
+      </h1>
+    </div>
+
+    <div class="dream-grid">
+      <img src="/images/s1.jpg" alt="Tropical Path" class="dream-img large top-right">
+      <img src="/images/s2.jpg" alt="Ocean Sunset" class="dream-img mid-left">
+      <img src="/images/s3.jpg" alt="Couple Travel" class="dream-img mid-right">
+    </div>
+
+    <div class="dream-layout">
+      <div class="dream-collage">
+        <img src="/images/s4.jpg" alt="Safari Elephant" class="dream-small">
+        <img src="/images/s5.jpg" alt="Desert Jeep" class="dream-small">
+        <img src="/images/s6.jpg" alt="Tuscany Landscape" class="dream-small">
+        <img src="/images/s7.jpg" alt="Florence Cathedral" class="dream-small">
+      </div>
+
+      <div class="dream-text">
+        <h2>It's that simple</h2>
+        <p>
+          Don't settle for generic vacation packages or self-planned getaways filled with
+          second-guessing and logistical headaches.
+        </p>
+        <p>
+          You deserve a once-in-a-lifetime experience that’s effortless, personal, and unforgettable.
+          TripMate takes care of every detail — you just make the memories.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trip Section -->
+<section class="trip-section fade-in">
+  <div class="trip-header">
+    <h2>Book your next trip with a TripMate Advisor</h2>
+    <div class="trip-arrows">
+      <button class="arrow-btn" id="prevBtn">&#8592;</button>
+      <button class="arrow-btn" id="nextBtn">&#8594;</button>
+    </div>
+  </div>
+  <div class="trip-cards" id="tripCards">
+
+    <div class="trip-card">
+      <img src="/images/honeymoon.jpg" alt="Honeymoon">
+      <h3>Honeymoons</h3>
+      <p>You've already planned the wedding. Why add anything else to your plate?</p>
+      <a href="/destinations" class="learn-btn">LEARN MORE</a>
+    </div>
+
+    <div class="trip-card">
+      <img src="/images/cruise.jpg" alt="Cruise">
+      <h3>Cruises</h3>
+      <p>TripMate Advisors matchmake every sea-bound passenger to the right ship.</p>
+      <a href="/destinations" class="learn-btn">LEARN MORE</a>
+    </div>
+
+    <div class="trip-card">
+      <img src="/images/tour.jpg" alt="Itineraries">
+      <h3>Itineraries & Tours</h3>
+      <p>Curated multi-stop itineraries that blend culture, cuisine, and adventure.</p>
+      <a href="/destinations" class="learn-btn">LEARN MORE</a>
+    </div>
+
+    <div class="trip-card">
+      <img src="/images/f1.jpg" alt="Family Trips">
+      <h3>Family Trips</h3>
+      <p>From safaris to beach vacations, let us craft the perfect family adventure.</p>
+      <a href="/destinations" class="learn-btn">LEARN MORE</a>
+    </div>
+
+    <div class="trip-card">
+      <img src="/images/f2.jpg" alt="Adventure Escapes">
+      <h3>Adventure Escapes</h3>
+      <p>Hike, dive, climb — thrill-seekers, these destinations are for you.</p>
+      <a href="/destinations" class="learn-btn">LEARN MORE</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Featured Hotels -->
+<section class="featured-hotels fade-in">
+  <div class="featured-header">
+    <h2>Featured Luxury Hotels</h2>
+    <p>Where indulgence meets authenticity — handpicked stays crafted for the discerning traveler.</p>
+  </div>
+
+  <div class="hotel-showcase">
+
+    <article class="hotel-mag" style="background-image:url('/images/hotel1.jpg');">
+      <div class="hotel-overlay">
+        <h3>The Greenwich Hotel – New York</h3>
+        <p>A sophisticated SoHo sanctuary blending timeless craftsmanship with intimate modern luxury.</p>
+        <a href="/destinations" class="hotel-btn">Explore</a>
+      </div>
+    </article>
+
+    <article class="hotel-mag" style="background-image:url('/images/hotel2.jpg');">
+      <div class="hotel-overlay">
+        <h3>Hacienda AltaGracia – Costa Rica</h3>
+        <p>A secluded wellness haven where the forest whispers serenity and luxury embraces simplicity.</p>
+        <a href="/destinations" class="hotel-btn">Explore</a>
+      </div>
+    </article>
+
+    <article class="hotel-mag" style="background-image:url('/images/hotel3.jpg');">
+      <div class="hotel-overlay">
+        <h3>Six Senses Ibiza – Spain</h3>
+        <p>Sustainable luxury on the Balearic coast with bohemian soul and holistic elegance.</p>
+        <a href="/destinations" class="hotel-btn">Explore</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+
+<!-- Hero Text White -->
+<style>
+  .hero .hero-title,
+  .hero h1,
+  .hero p {
+      color: #fff !important;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  }
+</style>

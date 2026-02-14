@@ -1,0 +1,45 @@
+<%- include('partials/header', { title }) %>
+<%- include('partials/navbar') %>
+
+<section class="hero" style="height:40vh;">
+  <div class="hero-text">
+    <h1><%= categoryName %> Trips</h1>
+    <p>Explore 5 curated trips selected for <%= categoryName %>.</p>
+  </div>
+</section>
+
+<section class="trip-section fade-in">
+  <div class="trip-header">
+    <h2><%= categoryName %> Experiences</h2>
+    <p>Handpicked trips for your chosen journey.</p>
+  </div>
+
+  <div class="trip-cards">
+
+    <% if (trips.length === 0) { %>
+      <p>No trips available in this category yet.</p>
+    <% } else { %>
+
+      <% trips.forEach(trip => { %>
+
+        <div class="trip-card">
+          <img src="<%= trip.image || '/images/default.jpg' %>" alt="<%= trip.destination %>">
+
+          <h3><%= trip.destination %></h3>
+          <p><%= trip.description %></p>
+
+          <p class="trip-price"><strong>$<%= trip.price.toFixed(2) %></strong></p>
+
+          <a href="/book?destination=<%= encodeURIComponent(trip.destination) %>" class="learn-btn">
+            BOOK NOW
+          </a>
+        </div>
+
+      <% }) %>
+
+    <% } %>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>
